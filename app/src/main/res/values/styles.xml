@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MalditaRiviera" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:navigationBarColor">#0F0F12</item>
+        <item name="android:statusBarColor">#0F0F12</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:colorAccent">#B79564</item>
+        <item name="android:windowBackground">#F5F0E8</item>
+    </style>
+</resources>
