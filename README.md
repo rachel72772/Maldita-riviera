@@ -2,7 +2,7 @@
 
 Aplicación Android privada para revisar productos de Paris Fashion Shops y construir la primera colección de Maldita Riviera sin realizar compras automáticas.
 
-## Versión 0.2.0
+## Versión 0.2.1
 
 - Navegador integrado con sesión gestionada personalmente por la usuaria.
 - **Buscar universo** rota búsquedas afines: conjuntos con corsé, encaje, satén, negro, marfil y otras líneas del perfil.
@@ -14,6 +14,7 @@ Aplicación Android privada para revisar productos de Paris Fashion Shops y cons
 - Prioriza proveedores ya identificados como Giorgia, Mochy, Frime Paris, F&P, Copperose, Soy & Co, Unika Paris y Jolio & Co.
 - La pestaña **Looks** muestra primero conjuntos completos y luego combina corsés/tops con partes inferiores compatibles.
 - La compatibilidad considera afinidad, color, materiales y proveedor común.
+- Firma de desarrollo estable para que las versiones posteriores puedan instalarse como actualización.
 - Exportación de la selección como JSON.
 - Ninguna función de compra automática.
 
@@ -25,6 +26,10 @@ Aplicación Android privada para revisar productos de Paris Fashion Shops y cons
 4. Revisa el resultado en **Guardados**.
 5. Consulta conjuntos completos y combinaciones en **Looks**.
 6. Usa **Guardar ficha** únicamente dentro de la página concreta de un producto.
+
+## Instalación de 0.2.1
+
+La versión 0.1.0 instalada anteriormente utilizó una firma temporal de GitHub Actions. Desinstálala una sola vez antes de instalar 0.2.1. Desde 0.2.1, las futuras APK generadas por este repositorio usarán la misma firma de desarrollo y podrán actualizar la aplicación directamente.
 
 ## APK
 
@@ -42,3 +47,5 @@ Los productos guardados se almacenan únicamente en `SharedPreferences` dentro d
 ## Limitaciones
 
 La extracción depende de la estructura actual del sitio. Si Paris Fashion Shops modifica su HTML, los selectores deberán actualizarse. La app propone productos por afinidad textual y visual disponible en las fichas; la decisión final y la comprobación de calidad, tallaje y costes siguen siendo manuales.
+
+La clave incluida es exclusivamente de desarrollo y no debe utilizarse para publicar una versión comercial en Google Play.
