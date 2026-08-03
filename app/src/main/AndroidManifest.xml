@@ -9,7 +9,7 @@
         android:usesCleartextTraffic="false"
         android:theme="@style/Theme.MalditaRiviera">
         <activity
-            android:name=".MainActivity"
+            android:name=".PublicScoutActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true">
             <intent-filter>
@@ -17,5 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
     </application>
 </manifest>
