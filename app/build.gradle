@@ -6,17 +6,30 @@ android {
     namespace 'com.malditariviera.curator'
     compileSdk 35
 
+    signingConfigs {
+        curatorDebug {
+            storeFile file('debug.keystore')
+            storePassword 'malditariviera'
+            keyAlias 'malditariviera'
+            keyPassword 'malditariviera'
+        }
+    }
+
     defaultConfig {
         applicationId 'com.malditariviera.curator'
         minSdk 24
         targetSdk 35
-        versionCode 2
-        versionName '0.2.0'
+        versionCode 3
+        versionName '0.2.1'
     }
 
     buildTypes {
+        debug {
+            signingConfig signingConfigs.curatorDebug
+        }
         release {
             minifyEnabled false
+            signingConfig signingConfigs.curatorDebug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
