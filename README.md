@@ -1,35 +1,45 @@
 # Maldita Riviera Curator
 
-Aplicación Android privada para revisar productos de Paris Fashion Shops y construir la primera colección de Maldita Riviera sin realizar compras automáticas.
+Aplicación Android para realizar scouting y curación estética en el catálogo público de Paris Fashion Shops, sin compras automáticas.
 
-## Versión 0.2.1
+## Versión 0.3.0 — modo público
 
-- Navegador integrado con sesión gestionada personalmente por la usuaria.
-- **Buscar universo** rota búsquedas afines: conjuntos con corsé, encaje, satén, negro, marfil y otras líneas del perfil.
-- **Curar página** analiza las tarjetas visibles de una búsqueda, marca o categoría.
-- Solo guarda automáticamente candidatos con afinidad suficiente.
-- Coincidencias fuertes pasan a **Encaja**; propuestas prometedoras quedan en **Revisar**.
-- Distingue una ficha de producto de una página general y elimina guardados erróneos de listados de mayoristas.
-- Perfil estético: corsetería, encaje, satén, tul, drapeados, lunares, minifaldas, vestidos ajustados y paleta negro, marfil, blanco, chocolate y burdeos.
-- Prioriza proveedores ya identificados como Giorgia, Mochy, Frime Paris, F&P, Copperose, Soy & Co, Unika Paris y Jolio & Co.
-- La pestaña **Looks** muestra primero conjuntos completos y luego combina corsés/tops con partes inferiores compatibles.
-- La compatibilidad considera afinidad, color, materiales y proveedor común.
-- Firma de desarrollo estable para que las versiones posteriores puedan instalarse como actualización.
-- Exportación de la selección como JSON.
-- Ninguna función de compra automática.
+- Funciona sin crear una cuenta profesional.
+- Bloquea y abandona las rutas de registro, inicio de sesión y alta empresarial.
+- Detecta páginas que solicitan número de IVA y justificante de empresa y vuelve al catálogo público.
+- Intenta cerrar ventanas y avisos que bloquean la navegación pública.
+- **Buscar universo** rota búsquedas afines: corsetería, encaje, satén, conjuntos, minifaldas, negro, marfil, burdeos y proveedores ya identificados.
+- **Curar visibles** analiza las tarjetas que aparecen en una búsqueda, marca o categoría.
+- **Guardar ficha** conserva una prenda concreta cuando su página individual es pública.
+- Los productos se clasifican como **Encaja**, **Revisar** o **Descartar**.
+- La pestaña **Looks** muestra conjuntos completos y combina corsés/tops con partes inferiores compatibles.
+- Mantiene los guardados existentes de versiones anteriores.
+- La firma de desarrollo permanece estable, de modo que 0.3.0 puede instalarse como actualización sobre 0.2.1.
+
+## Datos pendientes en modo público
+
+Sin acceso profesional pueden permanecer ocultos:
+
+- precio mayorista;
+- unidades del pack;
+- stock;
+- tallas y colores completos;
+- transporte y condiciones finales.
+
+La aplicación trata estos artículos como una preselección visual. La decisión de compra y el cálculo comercial se realizan más adelante.
 
 ## Uso
 
-1. Abre Paris Fashion Shops desde **Explorar** e inicia sesión tú misma.
-2. Pulsa **Buscar universo** o navega hasta una marca/categoría.
-3. Cuando veas tarjetas de productos, pulsa **Curar página**.
-4. Revisa el resultado en **Guardados**.
-5. Consulta conjuntos completos y combinaciones en **Looks**.
-6. Usa **Guardar ficha** únicamente dentro de la página concreta de un producto.
+1. Abre la app y permanece en **Explorar**.
+2. Pulsa **Buscar universo** para lanzar la siguiente búsqueda de nuestro perfil.
+3. Desplázate por el listado para cargar tarjetas.
+4. Pulsa **Curar visibles**.
+5. Revisa el resultado en **Guardados**.
+6. Marca manualmente **Encaja**, **Revisar** o **Descartar**.
+7. Consulta **Looks** para ver conjuntos y combinaciones provisionales.
+8. Pulsa **Exportar** para compartir la selección en formato JSON.
 
-## Instalación de 0.2.1
-
-La versión 0.1.0 instalada anteriormente utilizó una firma temporal de GitHub Actions. Desinstálala una sola vez antes de instalar 0.2.1. Desde 0.2.1, las futuras APK generadas por este repositorio usarán la misma firma de desarrollo y podrán actualizar la aplicación directamente.
+El botón **Catálogo público** vuelve a la portada. Si la web intenta enviarte a un formulario profesional, la app lo bloquea y regresa automáticamente al catálogo.
 
 ## APK
 
@@ -38,14 +48,12 @@ Cada cambio en `main` ejecuta el workflow **Build Android APK**. Cuando finalice
 1. Abre la pestaña **Actions** del repositorio.
 2. Entra en la ejecución más reciente de **Build Android APK**.
 3. Descarga el artefacto `maldita-riviera-curator-apk`.
-4. Descomprime el ZIP e instala `app-debug.apk` en Android.
+4. Descomprime el ZIP e instala `app-debug.apk`.
 
 ## Privacidad
 
-Los productos guardados se almacenan únicamente en `SharedPreferences` dentro del teléfono. La app analiza solo la página abierta cuando se pulsa un botón. No realiza rastreo masivo, no funciona en segundo plano, no automatiza compras y no exporta credenciales ni cookies.
+Los productos guardados se almacenan únicamente en `SharedPreferences` dentro del teléfono. La app analiza la página abierta cuando se pulsa un botón. No funciona en segundo plano, no automatiza compras y no rellena ni exporta credenciales o datos empresariales.
 
 ## Limitaciones
 
-La extracción depende de la estructura actual del sitio. Si Paris Fashion Shops modifica su HTML, los selectores deberán actualizarse. La app propone productos por afinidad textual y visual disponible en las fichas; la decisión final y la comprobación de calidad, tallaje y costes siguen siendo manuales.
-
-La clave incluida es exclusivamente de desarrollo y no debe utilizarse para publicar una versión comercial en Google Play.
+La extracción depende de la estructura pública del sitio. Si Paris Fashion Shops modifica su HTML o restringe nuevas secciones, los selectores deberán actualizarse. La clave incluida en el repositorio es exclusivamente de desarrollo y no debe utilizarse para publicar una versión comercial en Google Play.
